@@ -5,7 +5,7 @@ import lombok.*;
 import javax.persistence.*;
 
 @Getter
-@Builder
+@Setter
 @ToString
 @NoArgsConstructor
 public class User {
@@ -14,5 +14,11 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userSeq;
 
+    private String name;
+    private Integer age;
 
+    public User(String name, Integer age) {
+        this.name = name;
+        this.age = age;
+    }
 }
